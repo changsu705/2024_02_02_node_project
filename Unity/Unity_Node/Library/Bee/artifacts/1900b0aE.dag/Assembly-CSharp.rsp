@@ -355,6 +355,8 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/basicMain.cs"
 "Assets/Scripts/basicProtocols.cs"
+"Assets/Scripts/GameAPI.cs"
+"Assets/Scripts/PlayerModel.cs"
 "Assets/Scripts/Protocols.cs"
 "Assets/Scripts/UnityToNode.cs"
 -langversion:9.0

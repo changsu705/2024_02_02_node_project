@@ -63,6 +63,8 @@
     <Compile Include="Assets\Scripts\UnityToNode.cs" />
     <Compile Include="Assets\Scripts\basicMain.cs" />
     <Compile Include="Assets\Scripts\basicProtocols.cs" />
+    <Compile Include="Assets\Scripts\GameAPI.cs" />
+    <Compile Include="Assets\Scripts\PlayerModel.cs" />
     <Compile Include="Assets\Scripts\Protocols.cs" />
   </ItemGroup>
   <ItemGroup>
