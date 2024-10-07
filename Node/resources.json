@@ -1,0 +1,12 @@
+{
+  "11222": {
+    "playerName": "11222",
+    "password": "22222",
+    "resources": {
+      "metal": 500,
+      "crystal": 300,
+      "deuterium": 100
+    },
+    "planets": []
+  }
+}
