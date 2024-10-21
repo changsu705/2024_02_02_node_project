@@ -66,8 +66,10 @@
     <Compile Include="Assets\Scripts\basicProtocols.cs" />
     <Compile Include="Assets\Scripts\GameView.cs" />
     <Compile Include="Assets\Scripts\GameAPI.cs" />
+    <Compile Include="Assets\Scripts\AuthManager.cs" />
     <Compile Include="Assets\Scripts\PlayerModel.cs" />
     <Compile Include="Assets\Scripts\Protocols.cs" />
+    <Compile Include="Assets\Scripts\AuthUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
