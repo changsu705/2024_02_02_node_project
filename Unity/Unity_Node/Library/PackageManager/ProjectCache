@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638626635273564702
-    m_Hash: 2823433945
+      ticks: 638650781690558758
+    m_Hash: 1703891400
   m_LockFileStatus:
     m_FilePath: C:/Users/user/2024_02_02_node_project/Unity/Unity_Node/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638626635273589897
-    m_Hash: 2212709664
+      ticks: 638650781690568725
+    m_Hash: 498864655
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -118,11 +118,13 @@ m_ResolvedPackages:
     - 2.4.3
     - 2.4.4
     - 2.5.1
+    - 2.5.2
     compatible:
     - 2.3.1
     - 2.4.3
     - 2.4.4
     - 2.5.1
+    - 2.5.2
     recommended: 2.3.1
     deprecated: []
   dependencies: []

@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class basicMain : MonoBehaviour
 {
@@ -26,12 +24,12 @@ public class basicMain : MonoBehaviour
         });
     }
 
-    private IEnumerator GetBasic(string url, System.Action<string>callback)
+    private IEnumerator GetBasic(string url, System.Action<string> callback)
     {
         var webRequest = UnityWebRequest.Get(url);
         yield return webRequest.SendWebRequest();
 
-        if(webRequest.result == UnityWebRequest.Result.ConnectionError
+        if(webRequest.result == UnityWebRequest.Result.ConnectionError 
             || webRequest.result == UnityWebRequest.Result.ProtocolError)
         {
             Debug.Log("네트워크 환경이 좋지 않아서 통신 불가");
@@ -40,5 +38,5 @@ public class basicMain : MonoBehaviour
         {
             callback(webRequest.downloadHandler.text);
         }
-    }
+    }    
 }

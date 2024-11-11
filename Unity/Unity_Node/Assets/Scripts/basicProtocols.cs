@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class basicProtocols : MonoBehaviour
+public class basicProtocols
 {
-    
-    public class packets
+    public class Packets
     {
         public class res
         {
             public string message;
         }
     }
+
 }

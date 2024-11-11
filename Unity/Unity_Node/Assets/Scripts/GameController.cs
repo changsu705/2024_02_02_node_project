@@ -8,32 +8,33 @@ public class GameController : MonoBehaviour
     private PlayerModel playerModel;
     private GameAPI gameAPI;
 
+    // Start is called before the first frame update
     void Start()
     {
         gameAPI = gameObject.AddComponent<GameAPI>();
-        gameView.SetRegistarButtonListener(OnRegisterButtonClicked);
+        gameView.SetRegisterButtonListener(OnRegisterButtonClicked);
         gameView.SetLoginButtonListener(OnLoginButtonClicked);
-        gameView.SetCollectButtonListener(OnCollexctButtonClicked);
+        gameView.SetCollectButtonListener(OnCollectButtonClicked);
     }
 
     public void OnRegisterButtonClicked()
     {
         string playerName = gameView.playerNameInput.text;
-        StartCoroutine(gameAPI.RegisterPlayer(playerName, "1234"));
+        StartCoroutine(gameAPI.RegisterPlayer(playerName, "1234"));     //예시 비밀번호
     }
 
     public void OnLoginButtonClicked()
     {
         string playerName = gameView.playerNameInput.text;
-        //StartCoroutine(gameAPI.RegisterPlayer(playerName, "1234"));
+        StartCoroutine(LoginPlayerCoroutine(playerName, "1234"));     //예시 비밀번호
     }
 
-    public void OnCollexctButtonClicked()
+    public void OnCollectButtonClicked()
     {
-        if(playerModel == null)
+        if(playerModel != null)
         {
-            Debug.Log($"Collecting resources for : {playerModel.PlayerName}");
-            StartCoroutine(CollectCoroutine(playerModel.playerName));
+            Debug.Log($"Collecting resources for : {playerModel.playerName}");
+            StartCoroutine(CollectCoroutine(playerModel.playerName));   //PlayerModel.name 사용            
         }
         else
         {
@@ -41,10 +42,13 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private IEnumerator CollectCoroutine(string playerName)    
+    private IEnumerator CollectCoroutine(string playerName)
     {
-        yield return gameAPI.CollectResources(playerName, flag =>
+        yield return gameAPI.CollectResources(playerName, player =>
         {
+            playerModel.metal = player.metal;
+            playerModel.crystal = player.crystal;
+            playerModel.deuterium = player.deuterium;
             UpdateResourcesDisplay();
         });
     }
@@ -53,22 +57,17 @@ public class GameController : MonoBehaviour
     {
         yield return gameAPI.LoginPlayer(playerName, password, player =>
         {
-            playerModel = player;
+            playerModel = player;   //로그인 성공 시 playerModel 업데이트
             UpdateResourcesDisplay();
         });
     }
 
     private void UpdateResourcesDisplay()
     {
-        if(playerModel != null)
+        if(playerModel != null) //playerModel 이 null이 아닐 때만 UI 업데이트
         {
+            gameView.SetPlayerName(playerModel.playerName);
             gameView.UpdateResources(playerModel.metal, playerModel.crystal, playerModel.deuterium);
         }
-
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

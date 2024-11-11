@@ -66,9 +66,9 @@ router.post('/register' , (req, res) => {
     res.send({message : '등록 완료' , Player:name});
 });
 
-//자원 수집 메서드
+//자원 수집 메서드 
 router.post('/collect/:playerName' , (req, res) => {
-    const player = glabal.players[req.params.playerName];
+    const player = global.players[req.params.playerName];
 
     if(!player)
     {
@@ -77,33 +77,15 @@ router.post('/collect/:playerName' , (req, res) => {
 
     player.resources.metal += 10;
     player.resources.crystal += 5;
-    player.resources.deuterium += 2;
+    player.resources.deuterium += 2;   
 
-    saveResources();
-    res.send(player.resources);
-
-    console.log(name,password);
-    if(global.players[name])
-    {
-        return res.status(400).send({ message : '이미 등록된 사용자입니다.'});
-    }
-
-    global.players[name] = {
-
-        playerName: name,   //playerName을 설정
-        password: password,
-        resources:{
-            metal : 500,
-            crystal : 300,
-            deuterium : 100
-        },
-        planets:[]
-
-    };
+    console.log(player.resources);
 
     saveResources();            //자원 저장
-    res.send({message : '등록 완료' , Player:name});
+    res.send(player.resources);
 });
+
+
 
 //자원 저장 함수
 function saveResources() {

@@ -359,6 +359,8 @@
 "Assets/Scripts/basicProtocols.cs"
 "Assets/Scripts/GameAPI.cs"
 "Assets/Scripts/GameController.cs"
+"Assets/Scripts/GameDataMAnager.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/GameView.cs"
 "Assets/Scripts/PlayerModel.cs"
 "Assets/Scripts/Protocols.cs"

@@ -64,11 +64,13 @@
     <Compile Include="Assets\Scripts\UnityToNode.cs" />
     <Compile Include="Assets\Scripts\basicMain.cs" />
     <Compile Include="Assets\Scripts\basicProtocols.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameView.cs" />
     <Compile Include="Assets\Scripts\GameAPI.cs" />
     <Compile Include="Assets\Scripts\AuthManager.cs" />
     <Compile Include="Assets\Scripts\PlayerModel.cs" />
     <Compile Include="Assets\Scripts\Protocols.cs" />
+    <Compile Include="Assets\Scripts\GameDataMAnager.cs" />
     <Compile Include="Assets\Scripts\AuthUI.cs" />
   </ItemGroup>
   <ItemGroup>

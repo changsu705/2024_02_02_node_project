@@ -1,27 +1,23 @@
-using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 
 
 [Serializable]
-
 public class PlayerModel
 {
-    public string PlayerName;
-    //public int id;
-    //public string name;
+    public string playerName;
     public int metal;
     public int crystal;
     public int deuterium;
     public List<PlanetModel> Planets;
-
     public PlayerModel(string name)
     {
-        this.PlayerName = name;
+        this.playerName = name;
         this.metal = 500;
         this.crystal = 300;
         this.deuterium = 100;
     }
+
     public void CollectResources()
     {
         metal += 10;
@@ -29,6 +25,8 @@ public class PlayerModel
         deuterium += 2;
     }
 }
+
+[Serializable]
 public class PlanetModel
 {
     public int id;
